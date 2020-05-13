@@ -6,7 +6,6 @@ from adpy21_tests_hw.src import secretary_app
 class Test_Secretary(unittest.TestCase):
     def setUp(self):
         self.dirs, self.docs = secretary_app.update_date()
-        # self.error_docs = [{"type": "insurance", "number": "10006"}]
         with patch('adpy21_tests_hw.src.secretary_app.update_date', return_value=(self.dirs, self.docs)):
             with patch('adpy21_tests_hw.src.secretary_app.input', return_value='q'):
                 secretary_app.secretary_program_start()
